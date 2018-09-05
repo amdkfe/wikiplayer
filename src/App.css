@@ -3,12 +3,23 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    -webkit-animation: rotation 6s infinite linear;
+    opacity: 0.1;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+       -webkit-transform-origin: 20% 20%;
+    }
+    to {
+        -webkit-transform: rotate(-359deg);
+        -webkit-transform-origin: 20% 20%;
+    }
 }
 
 .App-header {
-  background-color: #222;
+  background-color: white;
   height: 150px;
   padding: 20px;
   color: white;
