@@ -20,7 +20,9 @@
 .App-title {
   font-size: 3em;
   margin-top: 0px;
-  color: gold;
-  /*display:inline-block; width:200px;*/
+  /*color: gold;*/
+  background: -webkit-linear-gradient(#ffd700, #c88f1f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
