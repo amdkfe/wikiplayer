@@ -5,25 +5,27 @@ import Header from './Header';
 import PlayerCard from './PlayerCard';
 import CardList from './CardList';
 
-// const state = {
-//   players : {Players},
-//   searchfield : '',
-// }
-
 class App extends Component {
-
   constructor() {
     super()
     this.state ={
     players : Players,
     searchfield : ''
     }
+  }
+  searchEvent = (event) => {
+    // console.log(event.target.value);
+    this.setState({searchfield : event.target.value})
+ 
   };
   render() {
+       const filter = this.state.players.filter(players => {
+      return players.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+    })
     return (
       <div className='tc'>
-        <Header />
-        <CardList Players = {Players}/>
+        <Header searching = {this.searchEvent}/>
+        <CardList Players = {filter}/>
       </div>
     );
   }
