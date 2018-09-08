@@ -3,7 +3,12 @@ import PlayerCard from  './PlayerCard'
 
 const CardList = ({Players}) => {
   const PlayerList = Players.map((player, i) => {
-    return <PlayerCard key ={i} name={Players[i].name} team={Players[i].team} image={Players[i].image}/>;
+    return <PlayerCard 
+      key ={Players[i].id} 
+      name={Players[i].shortName} 
+      team={Players[i].website} 
+      image= {`./badges/${Players[i].shortName}.png`}
+    />;
   })
 
   return (
