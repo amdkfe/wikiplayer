@@ -1,7 +1,7 @@
 import React from 'react';
-import Players from './Players'
+import Clubs from './Clubs'
 
-const PlayerCard = ({name,team,image}) => {
+const ClubCard = ({name,team,image}) => {
  return (
     <div className='tc bg-near-white dib br3 pa4 ma3 grow bw2 shadow-4 '> 
       <img className='mw-50' alt={name + ' logo'} src={image} height='180px'/>
@@ -14,4 +14,4 @@ const PlayerCard = ({name,team,image}) => {
 }
 
 
-export default PlayerCard;
+export default ClubCard;
