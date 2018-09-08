@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Players} from './Players'
 import Header from './Header';
-import PlayerCard from './PlayerCard';
+import ClubCard from './ClubCard';
 import CardList from './CardList';
 
 class App extends Component {
   constructor() {
     super()
     this.state ={
-    players : [],
+    clubs : [],
     searchfield : ''
     }
   }
@@ -26,18 +25,18 @@ class App extends Component {
     })
     .then(response => response.json())
     .then(name => {
-      this.setState({players :name.teams})
+      this.setState({clubs :name.teams})
     })
   };
 
   render() {
-      const filter = this.state.players.filter(players => {
-      return players.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+      const filter = this.state.clubs.filter(club => {
+      return club.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
     })
     return (
       <div className='tc'>
-        <Header searching = {this.searchEvent}/>
-        <CardList Players = {filter}/>
+        <Header searching = {this.searchEvent}/>  
+          <CardList Clubs = {filter}/>
       </div>
     );
   }
