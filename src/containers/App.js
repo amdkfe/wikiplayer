@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header';
-import ClubCard from './ClubCard';
-import CardList from './CardList';
+import Header from '../components/Header';
+import ClubCard from '../components/ClubCard';
+import CardList from '../components/CardList';
 
 class App extends Component {
   constructor() {
@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <div className='tc'>
         <Header searching = {this.searchEvent}/>  
-          <CardList Clubs = {filter}/>
+        <CardList Clubs = {filter}/>
       </div>
     );
   }
