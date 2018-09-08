@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './Header.css';
+import logo from '../containers/logo.svg';
+import '../containers/Header.css';
 import SearchBox from './SearchBox';
 
 const Header = ({searchfield,searching}) => {
