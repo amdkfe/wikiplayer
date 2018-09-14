@@ -9,11 +9,7 @@ src: local('FIFA Welcome'), url('fifawelcome1.3.woff') format('woff');
   text-align: center;
 }
 
-body{
-  background: linear-gradient(top,rgba(18, 47, 24,1)0%,rgba(100, 200, 131,1) 100%);
-  font-family: sans-serif;
-}
-
 h1{
   font-family: FIFA Welcome;
 }
+

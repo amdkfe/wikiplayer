@@ -1,5 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Courier New",Courier, monospace;
+  background: linear-gradient(top,rgba(18, 47, 24,1)0%,rgba(100, 200, 131,1) 100%);
 }

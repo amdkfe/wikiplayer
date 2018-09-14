@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../containers/logo.svg';
 import '../containers/Header.css';
 import SearchBox from './SearchBox';
+import Navigation from './Navigation'
 
 const Header = ({searchfield,searching}) => {
   return (
@@ -10,8 +11,11 @@ const Header = ({searchfield,searching}) => {
         <img src={logo} className="App-logo dib v-mid" alt="logo" />
         <h1 className='App-title dib'> WikiPlayer</h1>
       </div>
-      <div className=' tc fl w-75 pa2'>
+      <div className=' tc fl w-60 pa2'>
         <SearchBox searching = {searching} />
+      </div>
+      <div>
+        <Navigation className=' tc fl dib w-15 pa2'/> 
       </div>
     </div>
   )
