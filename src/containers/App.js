@@ -3,6 +3,7 @@ import './App.css';
 import Header from '../components/Header';
 import ClubCard from '../components/ClubCard';
 import CardList from '../components/CardList';
+import TopPlayer from '../components/TopPlayer';
 
 class App extends Component {
   constructor() {
@@ -37,6 +38,9 @@ class App extends Component {
       <div className='tc'>
         <Header searching = {this.searchEvent}/>  
         <CardList Clubs = {filter}/>
+        {/*<ImageUploadForm />
+        <FaceRecognition /> */
+        }
       </div>
     );
   }
