@@ -22,7 +22,7 @@ import '../containers/particles.css';
     }
   }
          
-const TopPlayer = ({name,team,image}) => {
+const ClubPage = ({name,team,image}) => {
  return (
     <div>
       <Particles className = 'particles' params = {params} />
@@ -31,4 +31,4 @@ const TopPlayer = ({name,team,image}) => {
 }
 
 
-export default TopPlayer;
+export default ClubPage;

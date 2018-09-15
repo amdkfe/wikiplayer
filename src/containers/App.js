@@ -3,19 +3,31 @@ import './App.css';
 import Header from '../components/Header';
 import ClubCard from '../components/ClubCard';
 import CardList from '../components/CardList';
-import TopPlayer from '../components/TopPlayer';
+import ClubPage from '../components/ClubPage';
 
 class App extends Component {
   constructor() {
     super()
     this.state ={
     clubs : [],
-    searchfield : ''
+    searchfield : '',
+    ClubPage: ''
     }
   }
 
   searchEvent = (event) => {
     this.setState({searchfield : event.target.value})
+  };
+
+  // OnCardClick = (event) => {
+  //   console.log('hi')
+  //   // this.setState({ClubPage : event.target.value})
+  // };
+
+     OnCardClick = (name) => {
+      console.log(this.name)
+      // this.setState({ClubPage : this.name})
+      // console.log(this.state.ClubPage)
   };
 
   componentDidMount() {
@@ -31,13 +43,15 @@ class App extends Component {
   };
 
   render() {
-      const filter = this.state.clubs.filter(club => {
+    const filter = this.state.clubs.filter(club => {
       return club.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
     })
+ 
     return (
       <div className='tc'>
         <Header searching = {this.searchEvent}/>  
-        <CardList Clubs = {filter}/>
+        <ClubPage clicked = {this.OnCardClick}/>
+        <CardList Clubs = {filter} selected = {this.OnCardClick}/>
         {/*<ImageUploadForm />
         <FaceRecognition /> */
         }
