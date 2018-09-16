@@ -19,16 +19,11 @@ class App extends Component {
     this.setState({searchfield : event.target.value})
   };
 
-  // OnCardClick = (event) => {
-  //   console.log('hi')
-  //   // this.setState({ClubPage : event.target.value})
-  // };
-
-     OnCardClick = (name) => {
-      console.log(this.name)
-      // this.setState({ClubPage : this.name})
-      // console.log(this.state.ClubPage)
-  };
+  OnCardClick = (name) => {
+    this.setState({ClubPage : name}, () => {
+      console.log(this.state.ClubPage)
+    }
+  )}
 
   componentDidMount() {
     fetch('https://api.football-data.org/v2/competitions/PL/teams' ,{
@@ -50,11 +45,8 @@ class App extends Component {
     return (
       <div className='tc'>
         <Header searching = {this.searchEvent}/>  
-        <ClubPage clicked = {this.OnCardClick}/>
+        <ClubPage selected = {this.OnCardClick}/>
         <CardList Clubs = {filter} selected = {this.OnCardClick}/>
-        {/*<ImageUploadForm />
-        <FaceRecognition /> */
-        }
       </div>
     );
   }
