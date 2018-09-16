@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../components/Header';
-import ClubCard from '../components/ClubCard';
 import CardList from '../components/CardList';
 import ClubPage from '../components/ClubPage';
 
@@ -11,7 +10,7 @@ class App extends Component {
     this.state ={
     clubs : [],
     searchfield : '',
-    ClubPage: ''
+    clubpage: ''
     }
   }
 
@@ -20,8 +19,8 @@ class App extends Component {
   };
 
   OnCardClick = (name) => {
-    this.setState({ClubPage : name}, () => {
-      console.log(this.state.ClubPage)
+    this.setState({clubpage : name}, () => {
+      console.log(this.state.clubpage)
     }
   )}
 
@@ -41,12 +40,14 @@ class App extends Component {
     const filter = this.state.clubs.filter(club => {
       return club.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
     })
+
+    const page = this.state.clubpage
  
     return (
       <div className='tc'>
         <Header searching = {this.searchEvent}/>  
-        <ClubPage selected = {this.OnCardClick}/>
-        <CardList Clubs = {filter} selected = {this.OnCardClick}/>
+        <ClubPage page = {page}/>
+        <CardList Clubs = {filter} OnCardClick = {this.OnCardClick}/>
       </div>
     );
   }
