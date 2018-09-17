@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../components/Header';
-import ClubCard from '../components/ClubCard';
 import CardList from '../components/CardList';
-import TopPlayer from '../components/TopPlayer';
+import ClubPage from '../components/ClubPage';
 
 class App extends Component {
   constructor() {
     super()
     this.state ={
     clubs : [],
-    searchfield : ''
+    searchfield : '',
+    ClubPage: '',
     }
   }
 
   searchEvent = (event) => {
     this.setState({searchfield : event.target.value})
   };
+
+  OnCardClick = (name) => {
+    this.setState({ClubPage : name}, () => {
+      console.log(this.state.ClubPage)
+    }
+  )}
 
   componentDidMount() {
     fetch('https://api.football-data.org/v2/competitions/PL/teams' ,{
@@ -31,15 +37,24 @@ class App extends Component {
   };
 
   render() {
-      const filter = this.state.clubs.filter(club => {
+    const filter = this.state.clubs.filter(club => {
       return club.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
     })
+
+    const select = this.state.clubs.find(club => {
+      return club.shortName === this.state.ClubPage;
+    })
+ 
     return (
       <div className='tc'>
+        {console.log('filter -> ' + filter)}
+        {console.log('select -> ' + select)}
+        {console.log('state -> ' + this.state.ClubPage)}
         <Header searching = {this.searchEvent}/>  
-        <CardList Clubs = {filter}/>
-        {/*<ImageUploadForm />
-        <FaceRecognition /> */
+        { 
+        this.state.ClubPage === '' 
+        ? <CardList Clubs = {filter} OnCardClick = {this.OnCardClick}/>
+        : <ClubPage Page = {select}/>
         }
       </div>
     );
