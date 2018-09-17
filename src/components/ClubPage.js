@@ -3,12 +3,6 @@ import ClubCard from  './ClubCard'
 import Particles from 'react-particles-js'
 import '../containers/particles.css';
 
-// const ClubPage= ({page}) => {
-  // const ClubList = Clubs.map((club, i) => {
-  //   return <ClubCard key ={page.id} name={page.shortName} team={page.website} image= {`./badges/${page.shortName}.png`} selected = {selected}
-  //   />;
-// })
-
   const params = {
     particles: {
       shape:{
@@ -27,31 +21,30 @@ import '../containers/particles.css';
     }
   }
          
-const ClubPage = ({name,team,image,page}) => {
-  // const thepage =  (page) => {
-  //    return <ClubCard key ={page.id} name={page.shortName} team={page.website} image= {`./badges/${page.shortName}.png`} />
-  // }
-  // const ClubList = ((page, i) => {
+const ClubPage = ({Page}) => {
+  // const SelectedPage = Page.map((Page, i) => {
   //   return <ClubCard 
-  //     key ={page[i].id} 
-  //     name={page[i].shortName} 
-  //     team={page[i].website} 
-  //     image= {`./badges/${page[i].shortName}.png`}
+  //     key ={Page[i].id} 
+  //     name={Page[i].shortName} 
+  //     team={Page[i].website} 
+  //     image= {`./badges/${Page[i].shortName}.png`}
   //     // OnCardClick = {OnCardClick}
   //   />;
   // })
 
  return (
     <div>
-      <Particles className = 'particles' params = {params} />
-      <div className='tc bg-near-white dib br3 pa4 ma3 grow bw2 shadow-4' > 
-        <img className='mw-50' alt={page + ' logo'} src={image} height='180px'/>
-        <div className ='mid-gray'>
-          <h2>{page}</h2>
-        
+    {console.log(Page)}
+      <div className='tc bg-near-white dib br3 pa6 ma3 bw2 shadow-4' > 
+        <Particles className = 'particles' params = {params} />
+        <img className='mw-50' alt={Page.shortName + ' logo'} src={`./badges/${Page.shortName}.png`} height='300px'/>
+          <h2>{Page.name}</h2>
+          <br/>
+          <hr/>
+          <p>{Page.website}</p>
+          <p>{Page.address}</p>
+        <Particles/>
       </div>
-    </div>
-  
     </div>
   );
 }

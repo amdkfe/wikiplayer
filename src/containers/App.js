@@ -10,7 +10,7 @@ class App extends Component {
     this.state ={
     clubs : [],
     searchfield : '',
-    clubpage: ''
+    ClubPage: '',
     }
   }
 
@@ -19,8 +19,8 @@ class App extends Component {
   };
 
   OnCardClick = (name) => {
-    this.setState({clubpage : name}, () => {
-      console.log(this.state.clubpage)
+    this.setState({ClubPage : name}, () => {
+      console.log(this.state.ClubPage)
     }
   )}
 
@@ -41,13 +41,21 @@ class App extends Component {
       return club.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
     })
 
-    const page = this.state.clubpage
+    const select = this.state.clubs.find(club => {
+      return club.shortName === this.state.ClubPage;
+    })
  
     return (
       <div className='tc'>
+        {console.log('filter -> ' + filter)}
+        {console.log('select -> ' + select)}
+        {console.log('state -> ' + this.state.ClubPage)}
         <Header searching = {this.searchEvent}/>  
-        <ClubPage page = {page}/>
-        <CardList Clubs = {filter} OnCardClick = {this.OnCardClick}/>
+        { 
+        this.state.ClubPage === '' 
+        ? <CardList Clubs = {filter} OnCardClick = {this.OnCardClick}/>
+        : <ClubPage Page = {select}/>
+        }
       </div>
     );
   }

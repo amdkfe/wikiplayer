@@ -1,6 +1,4 @@
 import React from 'react';
-// import Clubs from './Clubs'
-
 
 const ClubCard = ({name,team,image,OnCardClick}) => {
 
