@@ -9,14 +9,16 @@ const Header = ({searchfield,searching}) => {
     <div className=' center fl w-100 pa4'>
       <div className=' tl fl w-25 pa1'>
         <img src={logo} className="App-logo dib v-mid" alt="logo" />
-        <h1 className='App-title dib'> WikiPlayer</h1>
+        <h1 className='App-title dib'> Clubpedia</h1>
       </div>
-      <div className=' tc fl w-60 pa2'>
+      <div className=' tc fl w-70 pa2'>
         <SearchBox searching = {searching} />
       </div>
-      <div>
+      
+      {/*<div>
         <Navigation className=' tc fl dib w-15 pa2'/> 
-      </div>
+      </div>*/}
+
     </div>
   )
 }
