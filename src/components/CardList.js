@@ -8,12 +8,13 @@ const CardList = ({Clubs,OnCardClick}) => {
       name={Clubs[i].shortName} 
       team={Clubs[i].website} 
       image= {`./badges/${Clubs[i].shortName}.png`}
+      standing={Clubs[i].standing} 
       OnCardClick = {OnCardClick}
     />;
   })
 
   return (
-    <div className='dib min-vh-100'>
+    <div className='dib min-vh-100 fl w-100'>
       {ClubList}
     </div>
   )

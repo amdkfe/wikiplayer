@@ -1,0 +1,23 @@
+@font-face {
+font-family: 'FIFA Welcome';
+font-style: normal;
+font-weight: normal;
+src: local('FIFA Welcome'), url('fifawelcome1.3.woff') format('woff');
+}
+
+.App {
+  text-align: center;
+}
+
+h1{
+  font-family: FIFA Welcome;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+

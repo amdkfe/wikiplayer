@@ -3,6 +3,10 @@ import './App.css';
 import Header from '../components/Header';
 import CardList from '../components/CardList';
 import ClubPage from '../components/ClubPage';
+import Scroll from '../components/Scroll';
+import '../containers/Scroll.css';
+
+
 
 class App extends Component {
   constructor() {
@@ -46,17 +50,25 @@ class App extends Component {
     })
  
     return (
+      <div>
       <div className='tc'>
-        {console.log('filter -> ' + filter)}
-        {console.log('select -> ' + select)}
-        {console.log('state -> ' + this.state.ClubPage)}
         <Header searching = {this.searchEvent}/>  
-        { 
-        this.state.ClubPage === '' 
-        ? <CardList Clubs = {filter} OnCardClick = {this.OnCardClick}/>
-        : <ClubPage Page = {select}/>
-        }
       </div>
+        <div className = ''>
+          <div className = 'fl w-60'>
+            <Scroll>
+            <CardList Clubs = {filter} OnCardClick = {this.OnCardClick} /> 
+            </Scroll>
+          </div>
+          <div className = 'fl w-30 right br3 ml4 scrollbox' style={{ border: 'solid 1px #abb7ae70', padding:'25px 0px 25px 0px'}} >
+            { this.state.ClubPage === '' 
+              ? <div className='tc bg-near-white dib br3 pa0 ma3 bw2 shadow-4 w-80' > </div>
+              : <ClubPage Page = {select}/>
+            }
+          </div>
+        </div>
+      </div>  
+     
     );
   }
 }

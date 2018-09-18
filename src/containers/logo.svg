@@ -6,11 +6,11 @@
       <stop offset="100%" style="stop-color:#c88f1f;stop-opacity:1" />
     </linearGradient>
 
-    <filter id="f3" x="0" y="0" width="400%" height="400%">
+    <!-- <filter id="f3" x="0" y="0" width="400%" height="400%">
       <feOffset result="offOut" in="SourceAlpha" dx="10" dy="10" />
       <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
       <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-    </filter>
+    </filter> -->
   </defs>
 
   <g>
