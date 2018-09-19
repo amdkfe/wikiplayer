@@ -1,8 +1,9 @@
 .scrollbox{
 background-color: #d59f1b;
-background-image: linear-gradient(45deg, #2f663ee8 75%, transparent 25%, transparent 75%, #377649 75%, #527058), linear-gradient(-45deg, #1af156 25%, transparent 25%, transparent 29%, #2d643c 75%, #367448);
+background-image: linear-gradient(45deg, #2f663ee8 75%, transparent 25%, transparent 75%, #377649 75%, #527058), 
+  linear-gradient(-45deg, #1af156 25%, transparent 25%, transparent 29%, #2d643c 75%, #367448);
 background-size: 64px 60px;
 overflow-Y: scroll;
-height: 620px;
+height: 500px;
 padding:25px 10px 25px 10px;
 }

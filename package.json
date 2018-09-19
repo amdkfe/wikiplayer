@@ -15,5 +15,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "file-loader": "^2.0.0",
+    "ttf-loader": "^1.0.2"
   }
 }

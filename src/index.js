@@ -6,7 +6,7 @@ import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-<div className= 'tc'>
+<div className= 'tc wrapper main'>
   <App />
 </div>
   , document.getElementById('root'));
