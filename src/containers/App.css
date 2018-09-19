@@ -1,15 +1,16 @@
 @font-face {
-font-family: 'FIFA Welcome';
+font-family: 'osaka-re';
 font-style: normal;
 font-weight: normal;
-src: local('FIFA Welcome'), url('fifawelcome1.3.woff') format('woff');
+src: local('osaka-re'), url('osaka-re.woff') format('woff');
 }
 
 .App {
   text-align: center;
 }
 
-h1{
-  font-family: FIFA Welcome;
+h4{
+  font-family: osaka-re;
 }
+
 
