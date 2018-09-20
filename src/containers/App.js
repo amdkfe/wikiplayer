@@ -7,7 +7,6 @@ import ClubPage from '../components/ClubPage';
 import Scroll from '../components/Scroll';
 
 
-
 class App extends Component {
   constructor() {
     super()
@@ -28,16 +27,39 @@ class App extends Component {
   )}
 
   componentDidMount() {
-    fetch('https://api.football-data.org/v2/competitions/PL/teams' ,{
-      headers: { 'X-Auth-Token': '60f86103699a4d86bec46a1fb06d2065' },
-      dataType: 'json',
-      type: 'GET',
-    })
-    .then(response => response.json())
-    .then(name => {
-      this.setState({clubs :name.teams})
+    Promise.all([
+      fetch('https://api.football-data.org/v2/competitions/PL/teams',
+        {headers: { 'X-Auth-Token': '60f86103699a4d86bec46a1fb06d2065'},
+        dataType: 'json',
+        type: 'GET',}
+      ),
+      fetch('https://api.football-data.org/v2/competitions/BL1/teams',
+        {headers: { 'X-Auth-Token': '60f86103699a4d86bec46a1fb06d2065'},
+        dataType: 'json',
+        type: 'GET',}
+      ),
+      fetch('https://api.football-data.org/v2/competitions/PD/teams',
+        {headers: { 'X-Auth-Token': '60f86103699a4d86bec46a1fb06d2065'},
+        dataType: 'json',
+        type: 'GET',}
+      ),      
+      fetch('https://api.football-data.org/v2/competitions/SA/teams',
+        {headers: { 'X-Auth-Token': '60f86103699a4d86bec46a1fb06d2065'},
+        dataType: 'json',
+        type: 'GET',}
+      ),
+    ])
+    .then(([res1, res2, res3, res4]) => Promise.all([res1.json(), res2.json(), res3.json(), res4.json()]))
+    .then(requestData => {
+      this.setState({
+        clubs: requestData[0].teams
+          .concat(requestData[1].teams)
+          .concat(requestData[2].teams)
+          .concat(requestData[3].teams)
+      }) 
     })
   };
+
 
   render() {
     const filter = this.state.clubs.filter(club => {
@@ -67,7 +89,6 @@ class App extends Component {
           </div>
         </div>
       </div>  
-     
     );
   }
 }

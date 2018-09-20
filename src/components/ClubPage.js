@@ -8,7 +8,7 @@ const ClubPage = ({Page}) => {
     <div>
       <div className='tc bg-near-white dib br3 ma2 bw2 shadow-4 w-80 mh-200 pb4' > 
         {/*<Particles className = 'particles' params = {params} />*/}
-        <img className='mw-50 pt4' alt={Page.shortName + ' logo'} src={`./badges/${Page.shortName}.png`} height='100px'/>
+        <img className='mw-50 pt4' alt={Page.shortName + ' logo'} src= {Page.crestUrl} height='100px'/>
         <h2>{Page.shortName}</h2>
         <hr className='ml5 mr5'/>
         <div style = {{wordWrap: 'break-word', padding: '0 20px', fontSize: '14px'}}>
