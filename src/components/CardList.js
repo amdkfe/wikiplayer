@@ -7,8 +7,9 @@ const CardList = ({Clubs,OnCardClick}) => {
       key ={Clubs[i].id} 
       name={Clubs[i].shortName} 
       team={Clubs[i].website} 
-      image= {`./badges/${Clubs[i].shortName}.png`}
+      // defimage= {`./badges/${Clubs[1].shortName}.png`}
       standing={Clubs[i].standing} 
+      image={Clubs[i].crestUrl}
       OnCardClick = {OnCardClick}
     />;
   })
