@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import CardList from '../components/CardList';
 import ClubPage from '../components/ClubPage';
 import Scroll from '../components/Scroll';
+import SlideShow from '../components/SlideShow';
 
 
 class App extends Component {
@@ -75,7 +76,7 @@ class App extends Component {
       <div className='tc'>
         <Header searching = {this.searchEvent}/>  
       </div>
-        <div className = ''>
+        <div className = 'w-100'>
           <div className = 'fl w-60 grow'>
             <Scroll>
             <CardList Clubs = {filter} OnCardClick = {this.OnCardClick} /> 
@@ -86,6 +87,9 @@ class App extends Component {
               ? <div className='tc bg-near-white dib br3 pa0 ma3 bw2 shadow-4 w-80' > </div>
               : <ClubPage Page = {select}/>
             }
+          </div>
+          <div className="dib tc w-90" style={{ marginLeft: '-60px', marginTop:'-20px'}}>
+            <SlideShow className="tc w-60 w-100 ma3 "/>
           </div>
         </div>
       </div>  
