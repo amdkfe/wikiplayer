@@ -3,7 +3,6 @@ import '../containers/Scroll.css';
 
          
 const ClubPage = ({Page}) => {
-
  return (
     <div>
       <div className='tc bg-near-white dib br3 ma2 bw2 shadow-4 w-80 mh-200 pb4' > 
@@ -14,6 +13,7 @@ const ClubPage = ({Page}) => {
         <div style = {{wordWrap: 'break-word', padding: '0 20px', fontSize: '14px'}}>
           <p>{Page.email}</p>
           <p>{Page.phone}</p>
+          <p>{Page.id}</p>
           <p style = {{fontSize: '14px'}}>{Page.address}</p>
           <br />
             <div key={'website'} className='br1 w-50 tc grow pointer' 

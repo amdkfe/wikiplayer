@@ -1,8 +1,8 @@
 import React from 'react';
 import '../containers/ClubCard.css';
 
-const ClubCard = ({name,team,image,OnCardClick}) => {
 
+const ClubCard = ({name,team,image,OnCardClick}) => {
  return (
     <div className='tc clubbox pointer dib br2 pa0 ml2 mr2 mt3 ma0 grow bw1 shadow-4 ' 
       onClick = {OnCardClick.bind(this,name)}

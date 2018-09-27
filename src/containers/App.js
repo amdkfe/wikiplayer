@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import CardList from '../components/CardList';
 import ClubPage from '../components/ClubPage';
 import Scroll from '../components/Scroll';
+import SlideShow from '../components/SlideShow';
 
 
 class App extends Component {
@@ -49,7 +50,9 @@ class App extends Component {
         type: 'GET',}
       ),
     ])
+
     .then(([res1, res2, res3, res4]) => Promise.all([res1.json(), res2.json(), res3.json(), res4.json()]))
+
     .then(requestData => {
       this.setState({
         clubs: requestData[0].teams
@@ -75,7 +78,7 @@ class App extends Component {
       <div className='tc'>
         <Header searching = {this.searchEvent}/>  
       </div>
-        <div className = ''>
+        <div className = 'w-100'>
           <div className = 'fl w-60 grow'>
             <Scroll>
             <CardList Clubs = {filter} OnCardClick = {this.OnCardClick} /> 
@@ -83,10 +86,13 @@ class App extends Component {
           </div>
           <div className = 'fl w-30 right br3 ml4 scrollbox grow' style={{ border: 'solid 1px #abb7ae70', padding:'25px 0px 25px 0px'}} >
             { this.state.ClubPage === '' 
-              ? <div className='tc bg-near-white dib br3 pa0 ma3 bw2 shadow-4 w-80' > </div>
+              ? <div className='tc bg-near-white dib br3 pa0 ma3 bw2 shadow-4 w-80' >
+                <SlideShow className="tc w-60 w-100 ma3 "/>
+               </div>
               : <ClubPage Page = {select}/>
             }
           </div>
+
         </div>
       </div>  
     );
