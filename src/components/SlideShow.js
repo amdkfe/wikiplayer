@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import '../containers/particles.css'
-import Particles from 'react-particles-js';
+
 
 class SlideShow extends Component {
   constructor() {
     super()
     this.state ={
-    image : ['./slides/s2.png'],
-    clicked: 1
+    image : ['./slides/s1.png'],
+    clicked: 1,
     }
   }
 
   images =[
+    './slides/s1.png',
     './slides/s2.png',
     './slides/s3.png',
-    './slides/s4.png'
+    './slides/s4.png',
+    './slides/s5.png',
+    './slides/s6.png',
+    './slides/s7.png',
   ]
 
   
@@ -32,34 +35,18 @@ class SlideShow extends Component {
 
    return (
     <div style={{ 
-      height:'300px',
       padding:'25px 10px 25px 10px',
-      background: 'linear-gradient(rgb(255, 255, 255) 25%, rgb(94, 191, 124, 0.25) 100%)',
-      // border: '1px solid #cecece36'
+      position: 'absolute', 
+      zIndex : '-2', 
       }} 
       className='br3 mb5 mb5' >
 
-       <Particles 
-          className = 'particles' 
-          params={{
-            particles: {
-              line_linked: {
-                shadow: {
-                  enable: true,
-                  color: "3CA9D1",
-                  blur: 1
-                }
-              }
-            }
-          }}
+        <img className='pt1 tc pointer dib grow' height='320px' alt={'slides'} 
+          src={this.state.image[0]} style={{zIndex: '3'}}
+          onClick = {this.change}
         />
 
-        <img className='mw-50 pt1 pl3 fl' height='300px' alt={'slides'} 
-          src={this.state.image[0]} style={{zIndex: '3',marginTop: '-300px'}}
-        />
-
-        <button onClick={this.change}>next</button>
-    </div>
+      </div>
     );
   }
 }
