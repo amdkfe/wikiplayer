@@ -6,12 +6,12 @@ import SearchBox from './SearchBox';
 
 const Header = ({searchfield,searching}) => {
   return (
-    <div className=' center fl w-100 pa4'style={{paddingBottom:'5px'}}>
-      <div className=' tl fl pa1' style={{width:'30%'}}>
-        <img src={logo} className="App-logo dib v-mid" alt="logo" />
-        <h4 className='App-title dib'> Clubipedia</h4>
+    <div className='wrap'>
+      <div className=' logocontainer leftcolumn'>
+        <img src={logo} className="App-logo" alt="logo" />
+        <h4 className='App-title'> Clubipedia</h4>
       </div>
-      <div className=' tc fl pa2 pl4 ' style={{width:'65%'}}>
+      <div className='rightcolumn'>
         <SearchBox searching = {searching} />
       </div>
     </div>

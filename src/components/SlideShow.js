@@ -22,7 +22,6 @@ class SlideShow extends Component {
 
   
   change =(image) => {
-      
       this.setState({image : [this.images[this.state.clicked]] })
       if (this.state.clicked < this.images.length-1) {
         this.setState({clicked : this.state.clicked+1 })
@@ -32,20 +31,15 @@ class SlideShow extends Component {
   }
 
   render() {
-
    return (
-    <div style={{ 
-      padding:'25px 10px 25px 10px',
-      position: 'absolute', 
-      zIndex : '-2', 
-      }} 
-      className='br3 mb5 mb5' >
-
-        <img className='pt1 tc pointer dib grow' height='320px' alt={'slides'} 
-          src={this.state.image[0]} style={{zIndex: '3'}}
-          onClick = {this.change}
+      <div 
+        style={{padding:'40px 10px 25px 10px'}} 
+        onClick = {this.change}
+        className='br3 mb5 mb5 pointer' 
+      >
+        <img className='pt1 tc dib grow' height='320px' alt={'slides'} 
+          src={this.state.image[0]}
         />
-
       </div>
     );
   }
