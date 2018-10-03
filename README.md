@@ -1,4 +1,5 @@
-##Wikiplayer
+## Wikiplayer
+
 A simple full React small project that gets data from different APIs and render them in different components.
 
 > I created this project to imporove my knowledge of React and the way components react to each other. 
