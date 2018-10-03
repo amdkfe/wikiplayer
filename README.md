@@ -1,4 +1,4 @@
-## Wikiplayer
+## Wikiplayer(Clubipedia)
 
 A simple full React small project that gets data from different APIs and render them in different components.
 
